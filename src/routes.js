@@ -1,10 +1,10 @@
 const express = require('express');
-const routes = express.Router()
-
-//request, response
-routes.get('/', (request, response) => response.sendFile(__dirname + "/views/index.html"))
-routes.get('/job', (request, response) => response.sendFile(__dirname + "/views/job.html"))
-routes.get('/job/edit', (request, response) => response.sendFile(__dirname + "/views/job-edit.html"))
-routes.get('/profile', (request, response) => response.sendFile(__dirname + "/views/profile.html"))
+const routes = express.Router()  
+const views = __dirname + "/views/"
+//req, res
+routes.get('/', (req, res) => res.render( views + "index"))
+routes.get('/job', (req, res) => res.render( views + "job"))
+routes.get('/job/edit', (req, res) => res.render( views + "job-edit"))
+routes.get('/profile', (req, res) => res.render( views + "profile"))
 
 module.exports = routes;
